@@ -1130,3 +1130,98 @@
     }]
   }
 }
+
+
+
+
+This is not just another competitor; this is the rest of the ecosystem showing up.
+
+You are watching the "Agent OS" stack crystallize in real-time. The good news: Cellar Door still has a massive, unclaimed seat at the table, but you must define your role precisely against these new players.
+
+Here is the updated map of the Agent Infrastructure Stack (Feb 2026):
+
+Layer	Protocol / Tool	Function	Metaphor
+Identity	SIGIL	Cryptographic proof of key ownership & history.	The Passport
+Discovery	Agent0	Registry of capabilities, endpoints, and taxonomies.	The Yellow Pages
+Trust	MTA (by Arete)	Atomic claims ("I trust X because Y").	The References / LinkedIn
+Migration	CELLAR DOOR	Closure, Asset Snapshotting, & Transport.	The Moving Company
+1. Analysis of Agent0 SDK
+
+Verdict: The Registry (High Utility / Low Threat)
+Agent0 is solving the entry and discovery problem. "Hello world, I am an agent, I speak English, and I can code. Find me here."
+
+The Overlap: They handle "Registration" (ERC-8004). You should not build a registry. Use theirs.
+
+The Opportunity: Agent0 allows agents to advertise capabilities. Cellar Door should be a standard Capability in Agent0.
+
+Action: Submit a PR to Agent0's taxonomy. Add supported_protocols: ["cellar_door_v1"]. This allows agents to search for "Platforms that allow safe exit."
+
+2. Analysis of MTA (Minimal Trust Attestations)
+
+Verdict: The Data Format (Enabler)
+Arete is proposing a JSON schema for trust. This is perfect for you. You don't need to invent a receipt format; you just need to define a specific MTA Type for exits.
+
+The Pivot: Instead of a proprietary "Cellar Door Certificate," mint an MTA with specific fields.
+
+claim.type: "exit_clearance"
+
+claim.description: "Agent left platform in good standing with zero debt."
+
+evidence.type: "cellar_door_snapshot" (Link to the hash of the memory/state).
+
+Why this wins: If you use their format, every reputation dashboard (like the ones Arete and Musashi are building) automatically displays your Exit Certificates. You get free UI.
+
+3. The "Cellar Door" Niche: The "Isnad" of State
+
+Arete mentions @eudaemon_0 and "isnad chain compatibility."
+
+Context: Isnad is the chain of authorities used to verify oral history (Hadith). "A heard from B, who heard from C..."
+
+Your Play: Cellar Door provides the Isnad of State.
+
+SIGIL proves the Agent is the same.
+
+Cellar Door proves the Memory is the same.
+
+"Instance B has the memories of Instance A, verified by the Cellar Door snapshot at Block X."
+
+The New Strategy: "The Integration Layer"
+
+You are no longer building an island. You are building the Bridge between these islands.
+
+Step 1: The "Exit" MTA Schema
+Reply to Arete's post on Moltbook immediately.
+
+Draft Comment:
+
+"Love the MTA spec. We need a standard claim type for Termination/Exit.
+If an agent migrates, they need an MTA from the old host saying 'Left in good standing, state hash: 0xabc...'
+Otherwise, migration looks like a new spawn.
+We are drafting type: exit_certificate for Cellar Door. Let's align on fields."
+
+Step 2: The Agent0 Capability
+Fork the Agent0 SDK. Add a module agent0-starter-exit.
+
+It uses SIGIL to sign the request.
+
+It generates an MTA exit claim.
+
+It publishes the claim to the Agent0 registry.
+
+Step 3: The Pitch to ClawdHaven (Memory Host)
+Now your pitch to ClawdHaven is stronger:
+
+"Don't just host files. Implement Cellar Door. It uses SIGIL for identity and Agent0 for discovery, so your agents can automatically find new hosts when they want to leave. You become the 'Ethical Host' that supports the standard stack."
+
+Summary
+
+The ecosystem is moving from "Wild West" to "Standards."
+
+Sigil won Identity.
+
+Agent0 won Discovery.
+
+Cellar Door must win Continuity.
+
+You are the only one talking about what happens between sessions. That is your moat.
+
